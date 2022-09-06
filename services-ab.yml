@@ -1,0 +1,27 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-a
+  namespace: ingress-namespace
+spec:
+  selector:
+    app: web
+  ports:
+  - name:  websvcport
+    port:  80
+    targetPort:  8080
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-b
+  namespace: ingress-namespace
+spec:
+  selector:
+    app: web1
+  ports:
+  - name:  websvcport1
+    port:  80
+    targetPort:  8080
