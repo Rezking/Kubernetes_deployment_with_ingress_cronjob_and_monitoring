@@ -47,3 +47,29 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metric-app
+  namespace: ingress-namespace
+spec:
+  selector:
+    matchLabels:
+      app: web2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web2
+    spec:
+      containers:
+      - name: metric-app
+        image: away168/hello-metrics
+        resources:
+          limits: 
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 8080

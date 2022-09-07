@@ -26,5 +26,10 @@ spec:
             name: service-b
             port: 
               number: 80
-      
-
+      - pathType: Prefix
+        path: /v2
+        backend:
+          service: 
+            name: service-c
+            port: 
+              number: 80

@@ -1,0 +1,12 @@
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: vpa-a
+  namespace: ingress-namespace
+spec:
+  TargetRef:
+    apiVersion: "app/v1"
+    kind: Deployment
+    name: myapplication
+  updatePolicy:
+    updateMode: "Off"

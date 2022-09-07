@@ -25,3 +25,17 @@ spec:
   - name:  websvcport1
     port:  80
     targetPort:  8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-c
+  namespace: ingress-namespace
+spec:
+  selector:
+    app: web2
+  ports:
+  - name:  websvcport2
+    port:  80
+    targetPort:  8080
